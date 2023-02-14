@@ -1,8 +1,14 @@
 import AWS = require('aws-sdk');
 
-const ec2: AWS.EC2 = new AWS.EC2({ region: 'us-east-1' });
-const cloudformation: AWS.CloudFormation = new AWS.CloudFormation();
-const sts: AWS.STS = new AWS.STS();
+
+const awsConfig = {
+  region: 'cn-northwest-1',
+  accessKeyId : 'AKIA5SIH2FRV56C4I66G',
+  secretAccessKey : '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'
+}
+const ec2: AWS.EC2 = new AWS.EC2(awsConfig);
+const cloudformation: AWS.CloudFormation = new AWS.CloudFormation(awsConfig);
+const sts: AWS.STS = new AWS.STS(awsConfig);
 
 export class AWSActions {
   constructor() {}
